@@ -27,8 +27,7 @@ class CalculatorAppTest {
   @Test
   fun testAddMock() {
     val calcService = mock<CalculatorService> {
-      on { addNumbers(1, 1) } doReturn 2
-      on { addNumbers(2, 1) } doReturn 3
+      on { addNumbers(1, 1, 1) } doReturn 3
     }
     val calcApp = CalculatorApp(calcService)
     assertEquals(3, calcApp.add(1, 1, 1))
@@ -37,9 +36,7 @@ class CalculatorAppTest {
   @Test
   fun testAdd1Mock() {
     val calcService = mock<CalculatorService> {
-      on { addNumbers(1, 1) } doReturn 2
-      on { addNumbers(2, 1) } doReturn 3
-      on { addNumbers(3, 1) } doReturn 4
+      on { addNumbers(1, 1, 1, 1) } doReturn 4
     }
     val calcApp = CalculatorApp(calcService)
     assertEquals(4, calcApp.add(1, 1, 1, 1))
@@ -48,10 +45,7 @@ class CalculatorAppTest {
   @Test
   fun testAdd2Mock() {
     val calcService = mock<CalculatorService> {
-      on { addNumbers(1, 1) } doReturn 2
-      on { addNumbers(2, 1) } doReturn 3
-      on { addNumbers(3, 1) } doReturn 4
-      on { addNumbers(4, 1) } doReturn 5
+      on { addNumbers(1, 1, 1, 1, 1) } doReturn 5
     }
     val calcApp = CalculatorApp(calcService)
     assertEquals(5, calcApp.add(1, 1, 1, 1, 1))
