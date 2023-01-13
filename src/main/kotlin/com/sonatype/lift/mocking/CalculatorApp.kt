@@ -30,7 +30,7 @@ open class CalculatorApp(private val calculatorService: CalculatorService) {
 }
 
 open class CalculatorService {
-  open fun addNumbers(x: Int, y: Int): Int {
-    return x + y
+  open fun addNumbers(vararg x: Int): Int {
+    return x.sum()
   }
 }
